@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #004d40;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.quiz-container {
+  flex: 3;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  border-radius: 8px;
+}
+
+.answer-sheet {
+  flex: 1;
+  background-color: #e0f7da; /* 연한 연두색 */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.answer-sheet table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.answer-sheet th, .answer-sheet td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.answer-sheet th {
+  background-color: #388e3c; /* 녹색 */
+  color: white;
+  font-weight: bold;
+}
+
+.answer-sheet tr:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.answer-sheet tr.selected {
+  background-color: #d0d0d0;
+}
+
+.answer-sheet td.selected span {
+  background-color: #388e3c; /* 녹색 */
+  color: white;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.answer-sheet .question-number {
+  background-color: #e0f7da; /* 연한 연두색 */
+  color: black; /* 검은색 글씨 */
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;  /* 버튼 사이의 간격을 위한 마진 */
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;  /* 글자 굵게 */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.buttons {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;  /* 버튼들을 양쪽 끝으로 정렬 */
+}
+
+.prev-button {
+  margin-right: auto;
+}
+
+.next-button {
+  margin-left: auto;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #388e3c;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}

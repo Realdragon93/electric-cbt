@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자문제지 CBT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>전자문제지 CBT</h1>
+        <h2>유도전동기 part 1</h2>
+        <p>응시번호 : 0000001 | 성명 : 정뚠때니</p>
+    </div>
+    <div class="container">
+        <div class="quiz-container">
+            <form id="quiz-form">
+
+            <!-- 1번 문제 -->
+            <div class="question" id="question1">
+                <p>1. 3상 유도전동기의 회전방향은 이 전동기에서 발생하는 회전 자계의 회전 방향과 어떤 관계가 있는가?</p>
+                <input type="radio" name="q1" value="1" id="q1a">
+                <label for="q1a">① 무관하다.</label><br>
+                <input type="radio" name="q1" value="2" id="q1b">
+                <label for="q1b">② 회전 자계의 회전 방향으로 회전한다.</label><br>
+                <input type="radio" name="q1" value="3" id="q1c">
+                <label for="q1c">③ 회전 자계의 반대 방향으로 회전한다.</label><br>
+                <input type="radio" name="q1" value="4" id="q1d">
+                <label for="q1d">④ 부하 조건에 따른다.</label><br>
+                <button type="button" onclick="checkAnswer(1)">정답 확인</button>
+                <div id="feedback1" class="feedback"></div>
+            </div>
+            <!-- 2번 문제 -->
+            <div class="question" id="question2" style="display:none;">
+                <p>2. 유도전동기가 다른 어떤 전동기보다 넓게 보급되는 이유로 적당한 것은?</p>
+                <input type="radio" name="q2" value="1" id="q2a">
+                <label for="q2a">① 구조가 복잡하고 비싸다.</label><br>
+                <input type="radio" name="q2" value="2" id="q2b">
+                <label for="q2b">② 취급이 어려워 전문가의 조작이 필요하다.</label><br>
+                <input type="radio" name="q2" value="3" id="q2c">
+                <label for="q2c">③ 부하변화에 대해 속도 변화가 심하다.</label><br>
+                <input type="radio" name="q2" value="4" id="q2d">
+                <label for="q2d">④ 3상 교류에 의해 쉽게 회전자계를 얻는다.</label><br>
+                <button type="button" onclick="checkAnswer(2)">정답 확인</button>
+                <div id="feedback2" class="feedback"></div>
+            </div>
+            <!-- 3번 문제 -->
+            <div class="question" id="question3" style="display:none;">
+                <p>3. 유도전동기의 슬립 s의 범위는?</p>
+                <input type="radio" name="q3" value="1" id="q3a">
+                <label for="q3a">① s &lt; -1 </label><br>
+                <input type="radio" name="q3" value="2" id="q3b">
+                <label for="q3b">② -1 &lt; s &lt; 0 </label><br>
+                <input type="radio" name="q3" value="3" id="q3c">
+                <label for="q3c">③ 0 &lt; s &lt; 1 </label><br>
+                <input type="radio" name="q3" value="4" id="q3d">
+                <label for="q3d">④ 1 &lt; s </label><br>
+                <button type="button" onclick="checkAnswer(3)">정답 확인</button>
+                <div id="feedback3" class="feedback"></div>
+            </div>
+            <!-- 4번 문제 -->
+            <div class="question" id="question4" style="display:none;">
+                <p>4. 유도전동기의 슬립(s)을 나타내는 식은 무엇입니까?</p>
+                <input type="radio" name="q4" value="1" id="q4a">
+                <label for="q4a">① \\( s = \\frac{N_s - N}{N_s} \\)</label><br>
+                <input type="radio" name="q4" value="2" id="q4b">
+                <label for="q4b">② \\( s = \\frac{N_s + N}{N_s} \\)</label><br>
+                <input type="radio" name="q4" value="3" id="q4c">
+                <label for="q4c">③ \\( s = \\frac{N}{N_s - N} \\)</label><br>
+                <input type="radio" name="q4" value="4" id="q4d">
+                <label for="q4d">④ \\( s = \\frac{N_s - N}{N} \\)</label><br>
+                <button type="button" onclick="checkAnswer(4)">정답 확인</button>
+                <div id="feedback4" class="feedback"></div>
+            </div>
+            <!-- 5번 문제 -->
+            <div class="question" id="question5" style="display:none;">
+                <p>5. 60[Hz] 8극인 3상 유도전동기의 전부하에서 회전수가 855[rpm]이다. 이때 슬립 [%]은?</p>
+                <input type="radio" name="q5" value="1" id="q5a">
+                <label for="q5a">① 4</label><br>
+                <input type="radio" name="q5" value="2" id="q5b">
+                <label for="q5b">② 5</label><br>
+                <input type="radio" name="q5" value="3" id="q5c">
+                <label for="q5c">③ 6</label><br>
+                <input type="radio" name="q5" value="4" id="q5d">
+                <label for="q5d">④ 7</label><br>
+                <button type="button" onclick="checkAnswer(5)">정답 확인</button>
+                <div id="feedback5" class="feedback"></div>
+            </div>
+            <!-- 6번 문제 -->
+            <div class="question" id="question6" style="display:none;">
+                <p>6. 4극, 60[Hz]인 3상 유도기가 1,750[rpm]으로 회전하고 있을 때 전원의 b, c상을 바꾸면 이 때의 슬립은?</p>
+                <input type="radio" name="q6" value="1" id="q6a">
+                <label for="q6a">① 2.03</label><br>
+                <input type="radio" name="q6" value="2" id="q6b">
+                <label for="q6b">② 1.97</label><br>
+                <input type="radio" name="q6" value="3" id="q6c">
+                <label for="q6c">③ 0.029</label><br>
+                <input type="radio" name="q6" value="4" id="q6d">
+                <label for="q6d">④ 0.022</label><br>
+                <button type="button" onclick="checkAnswer(6)">정답 확인</button>
+                <div id="feedback6" class="feedback"></div>
+            </div>
+            <!-- 7번 문제 -->
+            <div class="question" id="question7" style="display:none;">
+                <p>7. 다음은 3상 유도전동기의 슬립이 s &lt; 0 인 경우를 설명한 것이다. 잘못된 것은?</p>
+                <input type="radio" name="q7" value="1" id="q7a">
+                <label for="q7a">① 동기속도 이상이다.</label><br>
+                <input type="radio" name="q7" value="2" id="q7b">
+                <label for="q7b">② 유도발전기로 사용된다.</label><br>
+                <input type="radio" name="q7" value="3" id="q7c">
+                <label for="q7c">③ 유도전동기 단독으로 동작이 가능하다.</label><br>
+                <input type="radio" name="q7" value="4" id="q7d">
+                <label for="q7d">④ 속도를 증가시키면 출력이 증가한다.</label><br>
+                <button type="button" onclick="checkAnswer(7)">정답 확인</button>
+                <div id="feedback7" class="feedback"></div>
+            </div>
+            <!-- 8번 문제 -->
+            <div class="question" id="question8" style="display:none;">
+                <p>8. 50[Hz], 4극의 유도전동기의 슬립이 4[%]일 때의 분당 회전수는?</p>
+                <input type="radio" name="q8" value="1" id="q8a">
+                <label for="q8a">① 1,200[rpm]</label><br>
+                <input type="radio" name="q8" value="2" id="q8b">
+                <label for="q8b">② 1,440[rpm]</label><br>
+                <input type="radio" name="q8" value="3" id="q8c">
+                <label for="q8c">③ 1,500[rpm]</label><br>
+                <input type="radio" name="q8" value="4" id="q8d">
+                <label for="q8d">④ 1,660[rpm]</label><br>
+                <button type="button" onclick="checkAnswer(8)">정답 확인</button>
+                <div id="feedback8" class="feedback"></div>
+            </div>
+            <!-- 9번 문제 -->
+            <div class="question" id="question9" style="display:none;">
+                <p>9. 60[Hz], 6극, 400[V], 20[kW]의 3상 유도전동기가 1000[rpm]으로 회전하고 있을 때의 2차 주파수[Hz]는?</p>
+                <input type="radio" name="q9" value="1" id="q9a">
+                <label for="q9a">① 9.6</label><br>
+                <input type="radio" name="q9" value="2" id="q9b">
+                <label for="q9b">② 4.8</label><br>
+                <input type="radio" name="q9" value="3" id="q9c">
+                <label for="q9c">③ 6</label><br>
+                <input type="radio" name="q9" value="4" id="q9d">
+                <label for="q9d">④ 8</label><br>
+                <button type="button" onclick="checkAnswer(9)">정답 확인</button>
+                <div id="feedback9" class="feedback"></div>
+            </div>
+            <!-- 10번 문제 -->
+            <div class="question" id="question10" style="display:none;">
+                <p>10. 그림과 같은 유도전동기가 있다. 고정자가 매초 100회전하고 회전자가 매초 95회전하고 있을 때, 회전자의 도체에 유기되는 기전력의 주파수[Hz]는?</p>
+                <img src="images/유도전동기 문 10.jpg" alt="유도전동기 그림" style="display:block; margin:auto; width:50%; height:auto;">                
+                <input type="radio" name="q10" value="1" id="q10a">
+                <label for="q10a">① 5</label><br>
+                <input type="radio" name="q10" value="2" id="q10b">
+                <label for="q10b">② 10</label><br>
+                <input type="radio" name="q10" value="3" id="q10c">
+                <label for="q10c">③ 15</label><br>
+                <input type="radio" name="q10" value="4" id="q10d">
+                <label for="q10d">④ 20</label><br>
+                <button type="button" onclick="checkAnswer(10)">정답 확인</button>
+                <div id="feedback10" class="feedback"></div>
+            </div>
+            <!-- 11번 문제 -->
+            <div class="question" id="question11" style="display:none;">
+                <p>11. 10극, 3상 유도전동기가 있다. 회전자도 3상이고, 정지시의 2차 1상의 전압이 200[V]이다. 이 회전자를 회전자계와 반대방향으로 300[rpm] 회전시키면 2차 전압은 약 몇 [V]인가? (단, 주파수는 50[Hz]이다.)</p>
+                <input type="radio" name="q11" value="1" id="q11a">
+                <label for="q11a">① 150</label><br>
+                <input type="radio" name="q11" value="2" id="q11b">
+                <label for="q11b">② 200</label><br>
+                <input type="radio" name="q11" value="3" id="q11c">
+                <label for="q11c">③ 350</label><br>
+                <input type="radio" name="q11" value="4" id="q11d">
+                <label for="q11d">④ 300</label><br>
+                <button type="button" onclick="checkAnswer(11)">정답 확인</button>
+                <div id="feedback11" class="feedback"></div>
+            </div>
+            <!-- 12번 문제 -->
+            <div class="question" id="question12" style="display:none;">
+                <p>12. 1차 권선수 .</p>
+                <input type="radio" name="q12" value="1" id="q12a">
+                <label for="q12a">① 답안 1</label><br>
+                <input type="radio" name="q12" value="2" id="q12b">
+                <label for="q12b">② 답안 2</label><br>
+                <input type="radio" name="q12" value="3" id="q12c">
+                <label for="q12c">③ 답안 3</label><br>
+                <input type="radio" name="q12" value="4" id="q12d">
+                <label for="q12d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(12)">정답 확인</button>
+                <div id="feedback12" class="feedback"></div>
+            </div>
+            <!-- 13번 문제 -->
+            <div class="question" id="question13" style="display:none;">
+                <p>13. 유도전동기의 부하를 증가시켰을 때 옳지 않은 것은?</p>
+                <input type="radio" name="q13" value="1" id="q13a">
+                <label for="q13a">① 속도는 감소한다.</label><br>
+                <input type="radio" name="q13" value="2" id="q13b">
+                <label for="q13b">② 1차 부하전류는 감소한다.</label><br>
+                <input type="radio" name="q13" value="3" id="q13c">
+                <label for="q13c">③ 슬립은 증가한다.</label><br>
+                <input type="radio" name="q13" value="4" id="q13d">
+                <label for="q13d">④ 2차 유도기전력은 증가한다.</label><br>
+                <button type="button" onclick="checkAnswer(13)">정답 확인</button>
+                <div id="feedback13" class="feedback"></div>
+            </div>
+            <!-- 14번 문제 -->
+            <div class="question" id="question14" style="display:none;">
+                <p>14. 여기에 문제를 입력하세요.</p>
+                <input type="radio" name="q14" value="1" id="q14a">
+                <label for="q14a">① 답안 1</label><br>
+                <input type="radio" name="q14" value="2" id="q14b">
+                <label for="q14b">② 답안 2</label><br>
+                <input type="radio" name="q14" value="3" id="q14c">
+                <label for="q14c">③ 답안 3</label><br>
+                <input type="radio" name="q14" value="4" id="q14d">
+                <label for="q14d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(14)">정답 확인</button>
+                <div id="feedback14" class="feedback"></div>
+            </div>
+            <!-- 15번 문제 -->
+            <div class="question" id="question15" style="display:none;">
+                <p>15. 여기에 문제를 입력하세요.</p>
+                <input type="radio" name="q15" value="1" id="q15a">
+                <label for="q15a">① 답안 1</label><br>
+                <input type="radio" name="q15" value="2" id="q15b">
+                <label for="q15b">② 답안 2</label><br>
+                <input type="radio" name="q15" value="3" id="q15c">
+                <label for="q15c">③ 답안 3</label><br>
+                <input type="radio" name="q15" value="4" id="q15d">
+                <label for="q15d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(15)">정답 확인</button>
+                <div id="feedback15" class="feedback"></div>
+            </div>
+            <!-- 16번 문제 -->
+            <div class="question" id="question16" style="display:none;">
+                <p>16. 여기에 문제를 입력하세요.</p>
+                <input type="radio" name="q16" value="1" id="q16a">
+                <label for="q16a">① 답안 1</label><br>
+                <input type="radio" name="q16" value="2" id="q16b">
+                <label for="q16b">② 답안 2</label><br>
+                <input type="radio" name="q16" value="3" id="q16c">
+                <label for="q16c">③ 답안 3</label><br>
+                <input type="radio" name="q16" value="4" id="q16d">
+                <label for="q16d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(16)">정답 확인</button>
+                <div id="feedback16" class="feedback"></div>
+            </div>
+            <!-- 17번 문제 -->
+            <div class="question" id="question17" style="display:none;">
+                <p>17. 여기에 문제를 입력하세요.</p>
+                <input type="radio" name="q17" value="1" id="q17a">
+                <label for="q17a">① 답안 1</label><br>
+                <input type="radio" name="q17" value="2" id="q17b">
+                <label for="q17b">② 답안 2</label><br>
+                <input type="radio" name="q17" value="3" id="q17c">
+                <label for="q17c">③ 답안 3</label><br>
+                <input type="radio" name="q17" value="4" id="q17d">
+                <label for="q17d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(17)">정답 확인</button>
+                <div id="feedback17" class="feedback"></div>
+            </div>
+            <!-- 18번 문제 -->
+            <div class="question" id="question18" style="display:none;">
+                <p>18. 여기에 문제를 입력하세요.</p>
+                <input type="radio" name="q18" value="1" id="q18a">
+                <label for="q18a">① 답안 1</label><br>
+                <input type="radio" name="q18" value="2" id="q18b">
+                <label for="q18b">② 답안 2</label><br>
+                <input type="radio" name="q18" value="3" id="q18c">
+                <label for="q18c">③ 답안 3</label><br>
+                <input type="radio" name="q18" value="4" id="q18d">
+                <label for="q18d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(18)">정답 확인</button>
+                <div id="feedback18" class="feedback"></div>
+            </div>
+            <!-- 19번 문제 -->
+            <div class="question" id="question19" style="display:none;">
+                <p>19. 여기에 문제를 입력하세요.</p>
+                <input type="radio" name="q19" value="1" id="q19a">
+                <label for="q19a">① 답안 1</label><br>
+                <input type="radio" name="q19" value="2" id="q19b">
+                <label for="q19b">② 답안 2</label><br>
+                <input type="radio" name="q19" value="3" id="q19c">
+                <label for="q19c">③ 답안 3</label><br>
+                <input type="radio" name="q19" value="4" id="q19d">
+                <label for="q19d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(19)">정답 확인</button>
+                <div id="feedback19" class="feedback"></div>
+            </div>
+            <!-- 20번 문제 -->
+            <div class="question" id="question20" style="display:none;">
+                <p>20. 여기에 문제를 입력하세요.</p>
+                <input type="radio" name="q20" value="1" id="q20a">
+                <label for="q20a">① 답안 1</label><br>
+                <input type="radio" name="q20" value="2" id="q20b">
+                <label for="q20b">② 답안 2</label><br>
+                <input type="radio" name="q20" value="3" id="q20c">
+                <label for="q20c">③ 답안 3</label><br>
+                <input type="radio" name="q20" value="4" id="q20d">
+                <label for="q20d">④ 답안 4</label><br>
+                <button type="button" onclick="checkAnswer(20)">정답 확인</button>
+                <div id="feedback20" class="feedback"></div>
+                <button type="button" id="final-submit" onclick="finalSubmit()" style="display:none;">최종 제출</button>
+            </div>
+            <div class="buttons">
+                <button type="button" class="prev-button" onclick="prevQuestion()">이전</button>
+                <button type="button" class="next-button" onclick="nextQuestion()">다음</button>
+            </div>   
+        </form>
+    </div>
+    <div class="answer-sheet">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5">답안 표기란</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for (let i = 1; i <= 20; i++) {
+                        document.write('<tr id="answer' + i + '" onclick="showQuestion(' + i + ')" style="cursor: pointer;"><td class="question-number">' + i + '</td>');
+                        for (let j = 1; j <= 4; j++) {
+                            document.write('<td id="answer' + i + '-' + j + '" onclick="selectAnswer(' + i + ', ' + j + ')"><span>①</span></td>'.replace('①', '①②③④'[j - 1]));
+                        }
+                        document.write('</tr>');
+                    }
+                </script>
+                <tr>
+                    <td colspan="5"><button type="button" onclick="finalSubmit()" class="submit-button">정답 제출</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="result" style="display:none;"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
