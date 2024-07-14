@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>공기업 전기직 전공 시험 대비 CBT</h1>
+    </div>
+    <div class="container">
+        <div class="category">
+            <h2>과목별 기출 객관식</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="openNewWindow('전기기기 (유도전동기).html')">전기기기</a></li>
+                <li><a href="javascript:void(0);" onclick="openNewWindow('전기이론.html')">전기이론</a></li>
+                <!-- 다른 항목들도 여기에 추가 -->
+            </ul>
+        </div>
+        <div class="category">
+            <h2>과목별 이론 주관식</h2>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="openNewWindow('전자문제집.html')">가스산업기사</a></li>
+                <li><a href="javascript:void(0);" onclick="openNewWindow('전자문제집.html')">공조냉동기계산업기사</a></li>
+                <!-- 다른 항목들도 여기에 추가 -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openNewWindow(url) {
+            var newWindow = window.open(url, '_blank', 'width=800,height=600');
+        }
+    </script>
+</body>
+</html>
