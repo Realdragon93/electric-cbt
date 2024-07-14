@@ -115,7 +115,6 @@ button:hover {
 }
 
 /* 기존 스타일은 유지 */
-
 .container {
   display: flex;
   flex-direction: row;
@@ -139,11 +138,12 @@ button:hover {
 
   .answer-sheet {
       order: 2;
-      flex: 0 1 auto;
+      flex: 0 1 30%;
   }
 
   .answer-sheet table {
       width: 100%;
+      font-size: 0.8em; /* 글자 크기를 작게 조정 */
   }
 
   .answer-sheet th, .answer-sheet td {
@@ -154,5 +154,23 @@ button:hover {
   .answer-sheet button.submit-button {
       width: 100%;
   }
+
+  .question, .answer-sheet {
+      margin: 5px; /* 모바일에서 마진을 줄임 */
+  }
 }
 
+/* 추가적인 스타일 조정 */
+@media (max-width: 480px) {
+  .answer-sheet {
+      flex: 0 1 20%; /* 더 작은 화면에서 답안 표기란의 비율을 줄임 */
+  }
+
+  .question {
+      flex: 0 1 80%; /* 더 작은 화면에서 문제 화면의 비율을 늘림 */
+  }
+
+  .answer-sheet table {
+      font-size: 0.7em; /* 더 작은 글자 크기 */
+  }
+}
