@@ -16,9 +16,27 @@ const answers = {
     q15: { correct: '4', explanation: '문제 15번의 정답은 4번입니다. 설명을 여기에 입력하세요.' },
     q16: { correct: '1', explanation: '문제 16번의 정답은 1번입니다. 설명을 여기에 입력하세요.' },
     q17: { correct: '2', explanation: '문제 17번의 정답은 2번입니다. 설명을 여기에 입력하세요.' },
-    q18: { correct: '3', explanation: '문제 18번의 정답은 3번입니다. 설명을 여기에 입력하세요.' },
-    q19: { correct: '4', explanation: '문제 19번의 정답은 4번입니다. 설명을 여기에 입력하세요.' },
-    q20: { correct: '1', explanation: '문제 20번의 정답은 1번입니다. 설명을 여기에 입력하세요.' }
+    q18: { 
+        correct: '1', 
+        explanation: '출력 \\( P_0 \\), 2차 동손 \\( P_{c2} \\), 2차 입력 \\( P_2 \\), 및 슬립 \\( s \\)인 유도전동기에서의 관계는 다음과 같습니다.\n\n' +
+                     '\\( P_2 \\rightarrow P_{c2} \\rightarrow P_0 \\)\n\n' +
+                     '\\( \\frac{P_2}{P_2} = \\frac{P_{c2}}{sP_2} = \\frac{P_0}{P_2 - sP_2} \\)\n\n' +
+                     '슬립(s)은 손실비를 말하는 것이고, 손실은 입력에 손실비를 곱한 값이다.\n\n' +
+                     '출력은 입력에 손실을 뺀 값이다.\n\n' +
+                     '여기서 \\( P_2 \\)의 값을 약분하여 비례식을 만들게 되면\n\n' +
+                     '\\( P_2 : P_{c2} : P_0 = 1 : s : 1 - s \\) 즉, 답은 ①이다.'
+    },    q19: {         correct: '3', 
+        explanation: '슬립(s)이란 손실비를 일컫는다.\n\n' +
+                     '그렇다면 효율이란  즉, \\( 1 - s \\) 전체에서 손실비를 빼주는 것이다.\n\n' +
+                     '따라서 정답은 \\( 1 - s \\) ③ 이다.' 
+    },
+    q20: { 
+        correct: '2', 
+        explanation: '동기 각속도를 동기 속도로 간주하고, 회전자 각속도를 회전자 속도로 간주한다.\n\n' +
+                     '따라서 슬립 \\( s = \\frac{N_s - N}{N_s} \\) 라고 생각한다면 \\( s = \\frac{\\omega_0 - \\omega}{\\omega_0} \\)이 된다.\n\n' +
+                     '여기서 구하고자 하는 것은 효율이다. 효율은 \\( 1 - s \\)이기 때문에 \\( \\eta_2 = 1 - \\frac{\\omega_0 - \\omega}{\\omega_0} \\)이 된다.\n\n' +
+                     '구해보면, \\( \\frac{\\omega}{\\omega_0} \\)이 된다.\n\n정답은 ② 이다.' 
+    }
 };
 
 let score = 0;
@@ -36,14 +54,14 @@ function checkAnswer(questionNumber) {
     }
 
     if (selected.value === answers[questionKey].correct) {
-        feedbackDiv.innerHTML = `<span style="color: blue; font-weight: bold;">정답입니다!</span><br><span style="color: black;">해설: ${answers[questionKey].explanation}</span>`;
+        feedbackDiv.innerHTML = `<span style="color: blue; font-weight: bold;">정답입니다!</span><br><span style="color: black;">해설: ${answers[questionKey].explanation.replace(/\n/g, '<br>')}</span>`;
         feedbackDiv.style.color = 'green';
-        MathJax.typeset(); // 수식을 렌더링합니다.
         score++;
     } else {
-        feedbackDiv.innerHTML = '틀렸습니다. 다시 생각해보세요.';
+        feedbackDiv.innerHTML = `<span style="color: red; font-weight: bold;">틀렸습니다. 다시 생각해보세요.</span><br><span style="color: black;">해설: ${answers[questionKey].explanation.replace(/\n/g, '<br>')}</span>`;
         feedbackDiv.style.color = 'red';
     }
+    MathJax.typeset(); // 수식을 렌더링합니다.
 }
 
 
@@ -82,17 +100,35 @@ function selectAnswer(questionNumber, answer) {
             radio.checked = true;
         }
     });
+    
     // Change color of selected answer
     for (let j = 1; j <= 4; j++) {
         const cell = document.getElementById(`answer${questionNumber}-${j}`);
         const span = cell.querySelector('span');
         if (j === answer) {
+            cell.classList.add('selected');
             span.classList.add('selected');
         } else {
+            cell.classList.remove('selected');
             span.classList.remove('selected');
         }
     }
 }
+
+// Attach event listeners to radio buttons for real-time updates
+document.addEventListener('DOMContentLoaded', () => {
+    const quizForm = document.getElementById('quiz-form');
+    const radioButtons = quizForm.querySelectorAll('input[type="radio"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('click', () => {
+            const questionNumber = radio.name.replace('q', '');
+            selectAnswer(parseInt(questionNumber), parseInt(radio.value));
+        });
+    });
+    
+    showQuestion(1);
+    highlightCurrentQuestion(1);
+});
 
 function highlightCurrentQuestion(questionNumber) {
     const rows = document.querySelectorAll('.answer-sheet tr');
