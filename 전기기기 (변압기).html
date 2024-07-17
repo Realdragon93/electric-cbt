@@ -311,7 +311,7 @@
                 <div id="feedback19" class="feedback"></div>
             </div>
 
-<!-- 20번 문제 -->
+            <!-- 20번 문제 -->
             <div class="question" id="question20" style="display:none;">
                 <p>20. 변압기 여자회로의 어드미턴스 \(Y_0(S)\)를 구하면? (단, \(I_0\)는 여자전류, \(I_f\)는 철손전류, \(I_φ\)는 자화전류, \(g_0\)는 컨덕턴스, \(V_1\)는 인가전압이다.)</p>
                 <input type="radio" name="q20" value="1" id="q20a">
@@ -326,37 +326,337 @@
                 <div id="feedback20" class="feedback"></div>
             </div>
 
-                </form>
-                <div class="buttons">
-                    <button type="button" class="prev-button" onclick="prevQuestion()">이전</button>
-                    <button type="button" class="next-button" onclick="nextQuestion()">다음</button>
-                </div>   
+            <!-- 21번 문제 -->
+            <div class="question" id="question21" style="display:none;">
+                <p>21. 단상변압기에서 1차 전압은 3000[V]이고, 1차측 무부하 전류는 0.09[A], 철손은 115[W]이다. 이때 자화 전류[A]는 약 얼마인가?</p>
+                <input type="radio" name="q21" value="1" id="q21a">
+                <label for="q21a">① 0.071</label><br>
+                <input type="radio" name="q21" value="2" id="q21b">
+                <label for="q21b">② 0.081</label><br>
+                <input type="radio" name="q21" value="3" id="q21c">
+                <label for="q21c">③ 0.81</label><br>
+                <input type="radio" name="q21" value="4" id="q21d">
+                <label for="q21d">④ 0.91</label><br>
+                <button type="button" onclick="checkAnswer(21)">정답 확인</button>
+                <div id="feedback21" class="feedback"></div>
+            </div>
+
+            <!-- 22번 문제 -->
+            <div class="question" id="question22" style="display:none;">
+                <p>22. 변압기의 누설 리액턴스를 줄이는 가장 효과적인 방법은 어느 것인가?</p>
+                <input type="radio" name="q22" value="1" id="q22a">
+                <label for="q22a">① 권선을 분할하여 조립한다.</label><br>
+                <input type="radio" name="q22" value="2" id="q22b">
+                <label for="q22b">② 권선을 동심 배치한다.</label><br>
+                <input type="radio" name="q22" value="3" id="q22c">
+                <label for="q22c">③ 코일의 단면적을 크게한다.</label><br>
+                <input type="radio" name="q22" value="4" id="q22d">
+                <label for="q22d">④ 철심의 단면적을 크게 한다.</label><br>
+                <button type="button" onclick="checkAnswer(22)">정답 확인</button>
+                <div id="feedback22" class="feedback"></div>
+            </div>
+
+            <!-- 23번 문제 -->
+            <div class="question" id="question23" style="display:none;">
+                <p>변압기에서 역률 100[%]일 때의 전압 변동률 ε는 어떻게 표시되는가?</p>
+                <input type="radio" name="q23" value="1" id="q23a">
+                <label for="q23a">① % 저항 강하</label><br>
+                <input type="radio" name="q23" value="2" id="q23b">
+                <label for="q23b">② % 리액턴스 강하</label><br>
+                <input type="radio" name="q23" value="3" id="q23c">
+                <label for="q23c">③ % 서셉턴스 강하</label><br>
+                <input type="radio" name="q23" value="4" id="q23d">
+                <label for="q23d">④ % 임피던스 강하</label><br>
+                <button type="button" onclick="checkAnswer(23)">정답 확인</button>
+                <div id="feedback23" class="feedback"></div>
+            </div>
+
+            <!-- 24번 문제 -->
+            <div class="question" id="question24" style="display:none;">
+                <p>어떤 변압기의 백분율 저항 강하가 3%, 백분율 리액턴스 강하가 4%라 한다. 이 변압기로 역률이 80%인 부하에 전력을 공급하고 있다. 이 변압기의 전압변동률은 몇 [%]인가?</p>
+                <input type="radio" name="q24" value="1" id="q24a">
+                <label for="q24a">① 4.0</label><br>
+                <input type="radio" name="q24" value="2" id="q24b">
+                <label for="q24b">② 2.4</label><br>
+                <input type="radio" name="q24" value="3" id="q24c">
+                <label for="q24c">③ 3.4</label><br>
+                <input type="radio" name="q24" value="4" id="q24d">
+                <label for="q24d">④ 4.8</label><br>
+                <button type="button" onclick="checkAnswer(24)">정답 확인</button>
+                <div id="feedback24" class="feedback"></div>
+            </div>
+
+            <!-- 25번 문제 -->
+            <div class="question" id="question25" style="display:none;">
+                <p>어떤 변압기의 단락시험에서, % 저항강하 2%와 % 리액턴스 강하 3%를 얻었다. 부하 역률이 80% 앞선 경우의 전압 변동률[%]은?</p>
+                <input type="radio" name="q25" value="1" id="q25a">
+                <label for="q25a">① -0.2</label><br>
+                <input type="radio" name="q25" value="2" id="q25b">
+                <label for="q25b">② 0.6</label><br>
+                <input type="radio" name="q25" value="3" id="q25c">
+                <label for="q25c">③ -3.0</label><br>
+                <input type="radio" name="q25" value="4" id="q25d">
+                <label for="q25d">④ 3.0</label><br>
+                <button type="button" onclick="checkAnswer(25)">정답 확인</button>
+                <div id="feedback25" class="feedback"></div>
+            </div>
+
+            <!-- 26번 문제 -->
+            <div class="question" id="question26" style="display:none;">
+                <p>어떤 단상 변압기의 2차 무부하 전압이 250[V]이고, 정격 부하시의 2차 단자 전압이 240[V]이다. 전압 변동률은 약 몇 [%]인가?</p>
+                <input type="radio" name="q26" value="1" id="q26a">
+                <label for="q26a">① 4.17</label><br>
+                <input type="radio" name="q26" value="2" id="q26b">
+                <label for="q26b">② 5.15</label><br>
+                <input type="radio" name="q26" value="3" id="q26c">
+                <label for="q26c">③ 6.65</label><br>
+                <input type="radio" name="q26" value="4" id="q26d">
+                <label for="q26d">④ 7.35</label><br>
+                <button type="button" onclick="checkAnswer(26)">정답 확인</button>
+                <div id="feedback26" class="feedback"></div>
+            </div>
+
+            <!-- 27번 문제 -->
+            <div class="question" id="question27" style="display:none;">
+                <p>10[kVA], 2000/100[V] 변압기에서 1차로 환산한 등가 임피던스는 \(5.9 + j8[\Omega]\)이다. 변압기의 % 리액턴스 강하는?</p>
+                <input type="radio" name="q27" value="1" id="q27a">
+                <label for="q27a">① 0.75</label><br>
+                <input type="radio" name="q27" value="2" id="q27b">
+                <label for="q27b">② 1.75</label><br>
+                <input type="radio" name="q27" value="3" id="q27c">
+                <label for="q27c">③ 2</label><br>
+                <input type="radio" name="q27" value="4" id="q27d">
+                <label for="q27d">④ 6</label><br>
+                <button type="button" onclick="checkAnswer(27)">정답 확인</button>
+                <div id="feedback27" class="feedback"></div>
+            </div>
+
+            <!-- 28번 문제 -->
+            <div class="question" id="question28" style="display:none;">
+                <p>임피던스 강하가 4[%]인 변압기가 운전 중 단락되었다. 그 단락 전류는 정격 전류의 몇 배인가?</p>
+                <input type="radio" name="q28" value="1" id="q28a">
+                <label for="q28a">① 15</label><br>
+                <input type="radio" name="q28" value="2" id="q28b">
+                <label for="q28b">② 20</label><br>
+                <input type="radio" name="q28" value="3" id="q28c">
+                <label for="q28c">③ 25</label><br>
+                <input type="radio" name="q28" value="4" id="q28d">
+                <label for="q28d">④ 30</label><br>
+                <button type="button" onclick="checkAnswer(28)">정답 확인</button>
+                <div id="feedback28" class="feedback"></div>
+            </div>
+
+            <!-- 29번 문제 -->
+            <div class="question" id="question29" style="display:none;">
+                <p>3,300/200[V], 50[kVA]인 단상 변압기의 퍼센트(%) 저항, 퍼센트(%) 리액턴스를 각각 3[%], 2[%]라 하면, 이때의 임피던스 전압은 몇 [V]인가?</p>
+                <input type="radio" name="q29" value="1" id="q29a">
+                <label for="q29a">① 95</label><br>
+                <input type="radio" name="q29" value="2" id="q29b">
+                <label for="q29b">② 100</label><br>
+                <input type="radio" name="q29" value="3" id="q29c">
+                <label for="q29c">③ 105</label><br>
+                <input type="radio" name="q29" value="4" id="q29d">
+                <label for="q29d">④ 119</label><br>
+                <button type="button" onclick="checkAnswer(29)">정답 확인</button>
+                <div id="feedback29" class="feedback"></div>
+            </div>
+
+            <!-- 30번 문제 -->
+            <div class="question" id="question30" style="display:none;">
+                <p>5[kVA], 3300/210[V], 단상 변압기의 단락시험에서 임피던스 전압 120[V], 동손 100[W]라 하면 퍼센트 저항강하는 몇 %인가?</p>
+                <input type="radio" name="q30" value="1" id="q30a">
+                <label for="q30a">① 2</label><br>
+                <input type="radio" name="q30" value="2" id="q30b">
+                <label for="q30b">② 3</label><br>
+                <input type="radio" name="q30" value="3" id="q30c">
+                <label for="q30c">③ 4</label><br>
+                <input type="radio" name="q30" value="4" id="q30d">
+                <label for="q30d">④ 5</label><br>
+                <button type="button" onclick="checkAnswer(30)">정답 확인</button>
+                <div id="feedback30" class="feedback"></div>
+            </div>
+
+            <!-- 31번 문제 -->
+            <div class="question" id="question31" style="display:none;">
+                <p>31. 변압기의 권수비가 10:1일 때 1차 전압이 220V라면 2차 전압은?</p>
+                <input type="radio" name="q31" value="1" id="q31a">
+                <label for="q31a">① 22V</label><br>
+                <input type="radio" name="q31" value="2" id="q31b">
+                <label for="q31b">② 2200V</label><br>
+                <input type="radio" name="q31" value="3" id="q31c">
+                <label for="q31c">③ 110V</label><br>
+                <input type="radio" name="q31" value="4" id="q31d">
+                <label for="q31d">④ 2.2V</label><br>
+                <button type="button" onclick="checkAnswer(31)">정답 확인</button>
+                <div id="feedback31" class="feedback"></div>
+            </div>
+
+            <!-- 32번 문제 -->
+            <div class="question" id="question32" style="display:none;">
+                <p>32. 변압기에서 무부하시 전류는 주로 무엇으로 구성되는가?</p>
+                <input type="radio" name="q32" value="1" id="q32a">
+                <label for="q32a">① 부하 전류</label><br>
+                <input type="radio" name="q32" value="2" id="q32b">
+                <label for="q32b">② 여자 전류</label><br>
+                <input type="radio" name="q32" value="3" id="q32c">
+                <label for="q32c">③ 철손 전류</label><br>
+                <input type="radio" name="q32" value="4" id="q32d">
+                <label for="q32d">④ 단락 전류</label><br>
+                <button type="button" onclick="checkAnswer(32)">정답 확인</button>
+                <div id="feedback32" class="feedback"></div>
+            </div>
+
+            <!-- 33번 문제 -->
+            <div class="question" id="question33" style="display:none;">
+                <p>33. 변압기의 1차 권선과 2차 권선이 전기적으로 절연되어 있는 이유는?</p>
+                <input type="radio" name="q33" value="1" id="q33a">
+                <label for="q33a">① 전기적 안정성 확보</label><br>
+                <input type="radio" name="q33" value="2" id="q33b">
+                <label for="q33b">② 전자기적 결합 방지</label><br>
+                <input type="radio" name="q33" value="3" id="q33c">
+                <label for="q33c">③ 열 방출</label><br>
+                <input type="radio" name="q33" value="4" id="q33d">
+                <label for="q33d">④ 기계적 강도 증가</label><br>
+                <button type="button" onclick="checkAnswer(33)">정답 확인</button>
+                <div id="feedback33" class="feedback"></div>
+            </div>
+
+            <!-- 34번 문제 -->
+            <div class="question" id="question34" style="display:none;">
+                <p>34. 변압기의 권수비가 20:1이고, 1차 권수가 2000회라면 2차 권수는?</p>
+                <input type="radio" name="q34" value="1" id="q34a">
+                <label for="q34a">① 100회</label><br>
+                <input type="radio" name="q34" value="2" id="q34b">
+                <label for="q34b">② 200회</label><br>
+                <input type="radio" name="q34" value="3" id="q34c">
+                <label for="q34c">③ 10회</label><br>
+                <input type="radio" name="q34" value="4" id="q34d">
+                <label for="q34d">④ 20회</label><br>
+                <button type="button" onclick="checkAnswer(34)">정답 확인</button>
+                <div id="feedback34" class="feedback"></div>
+            </div>
+
+            <!-- 35번 문제 -->
+            <div class="question" id="question35" style="display:none;">
+                <p>35. 변압기의 2차측 전압이 1차측 전압보다 높은 경우를 무엇이라 하는가?</p>
+                <input type="radio" name="q35" value="1" id="q35a">
+                <label for="q35a">① 승압</label><br>
+                <input type="radio" name="q35" value="2" id="q35b">
+                <label for="q35b">② 강압</label><br>
+                <input type="radio" name="q35" value="3" id="q35c">
+                <label for="q35c">③ 변압</label><br>
+                <input type="radio" name="q35" value="4" id="q35d">
+                <label for="q35d">④ 정압</label><br>
+                <button type="button" onclick="checkAnswer(35)">정답 확인</button>
+                <div id="feedback35" class="feedback"></div>
+            </div>
+
+            <!-- 36번 문제 -->
+            <div class="question" id="question36" style="display:none;">
+                <p>36. 변압기의 부하가 증가할 때 나타나는 현상은?</p>
+                <input type="radio" name="q36" value="1" id="q36a">
+                <label for="q36a">① 효율 증가</label><br>
+                <input type="radio" name="q36" value="2" id="q36b">
+                <label for="q36b">② 효율 감소</label><br>
+                <input type="radio" name="q36" value="3" id="q36c">
+                <label for="q36c">③ 전압 상승</label><br>
+                <input type="radio" name="q36" value="4" id="q36d">
+                <label for="q36d">④ 전류 감소</label><br>
+                <button type="button" onclick="checkAnswer(36)">정답 확인</button>
+                <div id="feedback36" class="feedback"></div>
+            </div>
+
+            <!-- 37번 문제 -->
+            <div class="question" id="question37" style="display:none;">
+                <p>37. 변압기의 절연 저항을 측정하는 데 사용되는 기기는?</p>
+                <input type="radio" name="q37" value="1" id="q37a">
+                <label for="q37a">① 오실로스코프</label><br>
+                <input type="radio" name="q37" value="2" id="q37b">
+                <label for="q37b">② 멀티미터</label><br>
+                <input type="radio" name="q37" value="3" id="q37c">
+                <label for="q37c">③ 메거</label><br>
+                <input type="radio" name="q37" value="4" id="q37d">
+                <label for="q37d">④ 클램프 미터</label><br>
+                <button type="button" onclick="checkAnswer(37)">정답 확인</button>
+                <div id="feedback37" class="feedback"></div>
+            </div>
+
+            <!-- 38번 문제 -->
+            <div class="question" id="question38" style="display:none;">
+                <p>38. 변압기의 절연유의 주된 역할은 무엇인가?</p>
+                <input type="radio" name="q38" value="1" id="q38a">
+                <label for="q38a">① 냉각 및 절연</label><br>
+                <input type="radio" name="q38" value="2" id="q38b">
+                <label for="q38b">② 전기적 안정성 제공</label><br>
+                <input type="radio" name="q38" value="3" id="q38c">
+                <label for="q38c">③ 열 방출</label><br>
+                <input type="radio" name="q38" value="4" id="q38d">
+                <label for="q38d">④ 화학적 보호</label><br>
+                <button type="button" onclick="checkAnswer(38)">정답 확인</button>
+                <div id="feedback38" class="feedback"></div>
+            </div>
+
+            <!-- 39번 문제 -->
+            <div class="question" id="question39" style="display:none;">
+                <p>39. 변압기의 오일 온도 상승을 방지하기 위한 방법은?</p>
+                <input type="radio" name="q39" value="1" id="q39a">
+                <label for="q39a">① 냉각 팬 사용</label><br>
+                <input type="radio" name="q39" value="2" id="q39b">
+                <label for="q39b">② 물 냉각</label><br>
+                <input type="radio" name="q39" value="3" id="q39c">
+                <label for="q39c">③ 공기 순환</label><br>
+                <input type="radio" name="q39" value="4" id="q39d">
+                <label for="q39d">④ 오일 필터</label><br>
+                <button type="button" onclick="checkAnswer(39)">정답 확인</button>
+                <div id="feedback39" class="feedback"></div>
+            </div>
+
+            <!-- 40번 문제 -->
+            <div class="question" id="question40" style="display:none;">
+                <p>40. 변압기의 주된 보호 장치는?</p>
+                <input type="radio" name="q40" value="1" id="q40a">
+                <label for="q40a">① 서지 보호기</label><br>
+                <input type="radio" name="q40" value="2" id="q40b">
+                <label for="q40b">② 차단기</label><br>
+                <input type="radio" name="q40" value="3" id="q40c">
+                <label for="q40c">③ 과전류 보호기</label><br>
+                <input type="radio" name="q40" value="4" id="q40d">
+                <label for="q40d">④ 서지 억제기</label><br>
+                <button type="button" onclick="checkAnswer(40)">정답 확인</button>
+                <div id="feedback40" class="feedback"></div>
+            </div>
+
+            </form>
+            <div class="buttons">
+                <button type="button" class="prev-button" onclick="prevQuestion()">이전</button>
+                <button type="button" class="next-button" onclick="nextQuestion()">다음</button>
+            </div>   
             </div>
             <div class="answer-sheet">
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="5">답안 표기란</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <script>
-                            for (let i = 1; i <= 20; i++) {
-                                document.write('<tr id="answer' + i + '" onclick="showQuestion(' + i + ')" style="cursor: pointer;"><td class="question-number">' + i + '</td>');
-                                for (let j = 1; j <= 4; j++) {
-                                    document.write('<td id="answer' + i + '-' + j + '" onclick="selectAnswer(' + i + ', ' + j + ')"><span>①</span></td>'.replace('①', '①②③④'[j - 1]));
-                                }
-                                document.write('</tr>');
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="5">답안 표기란</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <script>
+                        for (let i = 1; i <= 40; i++) {
+                            document.write('<tr id="answer' + i + '" onclick="showQuestion(' + i + ')" style="cursor: pointer;"><td class="question-number">' + i + '</td>');
+                            for (let j = 1; j <= 4; j++) {
+                                document.write('<td id="answer' + i + '-' + j + '" onclick="selectAnswer(' + i + ', ' + j + ')"><span>①</span></td>'.replace('①', '①②③④'[j - 1]));
                             }
-                        </script>
-                        <tr>
-                            <td colspan="5"><button type="button" onclick="finalSubmit()" class="submit-button">정답 제출</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                            document.write('</tr>');
+                        }
+                    </script>
+                    <tr>
+                        <td colspan="5"><button type="button" onclick="finalSubmit()" class="submit-button">정답 제출</button></td>
+                    </tr>
+                </tbody>
+            </table>
             </div>
-        </div>
-        <div id="result" style="display:none;"></div>
-        <script src="js/script.js"></script>
-        </body>
-        </html>
+            </div>
+            <div id="result" style="display:none;"></div>
+            <script src="js 변압기/script 변압기.js"></script>
+</body>
+</html>
