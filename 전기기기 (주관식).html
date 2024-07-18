@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>전기기기 주관식 문제</title>
+    <link rel="stylesheet" href="css 전기기기 주관식/전기기기 주관식.css">
+    <script defer src="js 전기기기 주관식/script 전기기기 주관식.js"></script>
+</head>
+<body>
+    <form id="quiz-form">
+        <!-- 1번 문제 -->
+        <div class="question" id="question1">
+            <p>[직류기 개념 1] 전기기기 손실 경감 방안</p>
+            <table>
+                <tr>
+                    <td>히스테리시스손 감소</td>
+                    <td><input type="text" id="answer1-1" name="answer1-1"></td>
+                </tr>
+                <tr>
+                    <td>와류손 감소</td>
+                    <td><input type="text" id="answer1-2" name="answer1-2"></td>
+                </tr>
+            </table>
+            <button type="button" onclick="checkAnswer(1)">정답 확인</button>
+            <div id="feedback1" class="feedback"></div>
+        </div>
+
+        <!-- 2번 문제 -->
+        <div class="question" id="question2">
+            <p>[직류기 개념 2] 직류기를 구성하는 대표적인 3요소</p>
+            <table>
+                <tr>
+                    <td><input type="text" id="answer2-1" name="answer2-1"></td>
+                    <td><input type="text" id="answer2-2" name="answer2-2"></td>
+                    <td><input type="text" id="answer2-3" name="answer2-3"></td>
+                </tr>
+            </table>
+            <button type="button" onclick="checkAnswer(2)">정답 확인</button>
+            <div id="feedback2" class="feedback"></div>
+        </div>
+
+        <!-- 다른 문제들 -->
+    </form>
+</body>
+</html>

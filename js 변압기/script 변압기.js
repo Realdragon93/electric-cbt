@@ -90,33 +90,45 @@ const answers = {
         따라서, 정답은 ②이다.
         `
     },
-    q11: { correct: '4', explanation: '동기속도는 900rpm이므로 슬립은 5가 됩니다.' },
-    q12: { correct: '1', explanation: '부하를 증가시키면 전류가 증가한다. 속도는 감소. 속도가 감소하면 슬립은 증가. 슬립이 증가하면 2차 유도기전력이 증가' },
-    q13: { correct: '2', explanation: '부하를 증가시키면 전류가 증가한다. 속도는 감소. 속도가 감소하면 슬립은 증가. 슬립이 증가하면 2차 유도기전력이 증가' },
-    q14: { correct: '3', explanation: '문제 14번의 정답은 3번입니다. 설명을 여기에 입력하세요.' },
-    q15: { correct: '4', explanation: '문제 15번의 정답은 4번입니다. 설명을 여기에 입력하세요.' },
-    q16: { correct: '1', explanation: '문제 16번의 정답은 1번입니다. 설명을 여기에 입력하세요.' },
-    q17: { correct: '2', explanation: '문제 17번의 정답은 2번입니다. 설명을 여기에 입력하세요.' },
-    q18: { 
-        correct: '1', 
-        explanation: '출력 \\( P_0 \\), 2차 동손 \\( P_{c2} \\), 2차 입력 \\( P_2 \\), 및 슬립 \\( s \\)인 유도전동기에서의 관계는 다음과 같습니다.\n\n' +
-                     '\\( P_2 \\rightarrow P_{c2} \\rightarrow P_0 \\)\n\n' +
-                     '\\( \\frac{P_2}{P_2} = \\frac{P_{c2}}{sP_2} = \\frac{P_0}{P_2 - sP_2} \\)\n\n' +
-                     '슬립(s)은 손실비를 말하는 것이고, 손실은 입력에 손실비를 곱한 값이다.\n\n' +
-                     '출력은 입력에 손실을 뺀 값이다.\n\n' +
-                     '여기서 \\( P_2 \\)의 값을 약분하여 비례식을 만들게 되면\n\n' +
-                     '\\( P_2 : P_{c2} : P_0 = 1 : s : 1 - s \\) 즉, 답은 ①이다.'
-    },    q19: {         correct: '3', 
-        explanation: '슬립(s)이란 손실비를 일컫는다.\n\n' +
-                     '그렇다면 효율이란  즉, \\( 1 - s \\) 전체에서 손실비를 빼주는 것이다.\n\n' +
-                     '따라서 정답은 \\( 1 - s \\) ③ 이다.' 
-    },
-    q20: { 
+    q11: { 
         correct: '2', 
-        explanation: '동기 각속도를 동기 속도로 간주하고, 회전자 각속도를 회전자 속도로 간주한다.\n\n' +
-                     '따라서 슬립 \\( s = \\frac{N_s - N}{N_s} \\) 라고 생각한다면 \\( s = \\frac{\\omega_0 - \\omega}{\\omega_0} \\)이 된다.\n\n' +
-                     '여기서 구하고자 하는 것은 효율이다. 효율은 \\( 1 - s \\)이기 때문에 \\( \\eta_2 = 1 - \\frac{\\omega_0 - \\omega}{\\omega_0} \\)이 된다.\n\n' +
-                     '구해보면, \\( \\frac{\\omega}{\\omega_0} \\)이 된다.\n\n정답은 ② 이다.' 
+        explanation: `
+        누설 리액턴스는 \\( X_L = \\omega L = 2 \\pi f L \\)이다. <br>
+        전자기학 공식에서 리액턴스 \\( L = \\frac{\\mu S N^2}{l} \\)로 표현된다. <br>
+        따라서, 각 공식의 관계를 살펴보면 \\( X_L \\propto L \\propto N^2 \\)이 된다. <br>
+        정답은 ②이다.
+        `
+    },
+    q12: { 
+        correct: '1', 
+        explanation: `
+        공식 간의 관계를 살펴보면 된다. <br>
+        [권수와 여자 전류 관계] <br>
+        \\( X_L = \\omega L = 2 \\pi f L \\), \\( L = \\frac{\\mu S N^2}{l} \\), \\( X_L \\propto L \\propto N^2 \\) <br>
+        \\( I = \\frac{E}{X_L} \\) 관계를 생각해보면, \\( I_f \\propto \\frac{1}{N^2} \\)이다. <br>
+        [권수와 자속과의 관계] <br>
+        \\( E = 4.44 f N \\phi \\) <br>
+        \\( \\phi \\propto \\frac{1}{N} \\)이다. <br>
+        따라서, 권수가 2배 증가하면, 여자전류 \\( I_f \\)는 \\( \\frac{1}{4} \\)로 줄고, 자속 \\( \\phi \\)는 \\( \\frac{1}{2} \\) 감소한다. <br>
+        정답은 ①이다.
+        `
+    },
+    q13: { 
+        correct: '4', 
+        explanation: `
+        변압기는 전자유도 작용에 의해 만들어진다.
+        `
+    },
+    q14: { 
+        correct: '4', 
+        explanation: `
+        <img src="images 변압기/정답 14-1.png" alt="변압기 이미지" style="display:block; margin:auto; width:50%; height:auto;"><br>
+        <img src="images 변압기/정답 14-2.png" alt="변압기 이미지" style="display:block; margin:auto; width:30%; height:auto;"><br>
+        무부하의 경우 변압기의 회로는 그림 1번에서 그림 2번으로 바뀌게 된다. <br>
+        무부하의 여자전류(\\( I_o \\))는 철손 전류(철손 \\( P_i \\) 발생) + 자화 전류(자속 \\( \\phi \\) 발생) <br>
+        무부하 여자전류의 공식은 \\( I_o = \\sqrt{I_i^2 + I_\\phi^2} \\)이다. <br>
+        따라서, 부하에 관계없이(=무부하) 자속을 만드는 것은 자화전류 정답은 ④이다.
+        `
     }
 };
 
@@ -223,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showQuestion(questionNumber) {
-    for (let i = 1; i <= 40; i++) {  // 총 문제 수를 40으로 설정
+    for (let i = 1; i <= 82; i++) {  // 총 문제 수를 82으로 설정
         document.getElementById(`question${i}`).style.display = (i === questionNumber) ? 'block' : 'none';
     }
     highlightCurrentQuestion(questionNumber);
@@ -240,7 +252,7 @@ function prevQuestion() {
 
 function nextQuestion() {
     const currentQuestion = parseInt(document.querySelector('.question:not([style*="display: none"])').id.replace('question', ''), 10);
-    if (currentQuestion < 40) {  // 총 문제 수를 40으로 설정
+    if (currentQuestion < 82) {  // 총 문제 수를 82으로 설정
         showQuestion(currentQuestion + 1);
     } else {
         alert('마지막 문제입니다.');
