@@ -129,10 +129,85 @@ const answers = {
         무부하 여자전류의 공식은 \\( I_o = \\sqrt{I_i^2 + I_\\phi^2} \\)이다. <br>
         따라서, 부하에 관계없이(=무부하) 자속을 만드는 것은 자화전류 정답은 ④이다.
         `
+    },
+    q15: { 
+        correct: '4', 
+        explanation: `
+        단락 시험(부하시험)을 통해 알 수 있는 것:
+        1) 임피던스 전압 (임피던스) \\(V_s\\) : 변압기에서의 전압강하
+        2) 임피던스 와트 (동손) \\(P_s\\) : 변압기에서의 손실
+        3) 전압 변동률
+    
+        <비교>
+        무부하 시험에서 구할 수 있는 것:
+        1) 여자 어드미턴스
+        2) 철손
+        `
+    },
+    q16: { 
+        correct: '1', 
+        explanation: `
+        권수비 \\( a = \\sqrt{\\frac{529}{1}} \\) 이다.
+        1차전압 \\( V_1 \\)은 권수비 공식에 의해 \\( a \\times V_2 \\)가 된다.
+        따라서, \\( \\sqrt{\\frac{529}{1}} \\times 300 = 6900 \\) 정답은 ①이다.
+        `
+    },
+    q17: { 
+        correct: '3', 
+        explanation: `
+        권수비 \\( a = \\sqrt{\\frac{Z_1}{Z_2}} = \\frac{N_1}{N_2} \\) 이다.
+        \\( N_2 = \\frac{1500}{\\sqrt{\\frac{4000}{20}}} = \\approx 106 \\) 이다.
+        따라서, 정답은 ③이다.
+        `
+    },
+    q18: { 
+        correct: '2', 
+        explanation: `
+        변압기 무부하 상태에서 무부하 여자전류는, 철손 전류와, 자화 전류로 나누어진다.
+        <img src="images 변압기/정답 14-1.png" alt="변압기 이미지" style="display:block; margin:auto; width:50%; height:auto;"><br>
+        <img src="images 변압기/정답 14-2.png" alt="변압기 이미지" style="display:block; margin:auto; width:30%; height:auto;"><br>
+        철손 전류에서의 저항은 여자 컨덕턴스이고, 자화 전류에서 저항은 서셉턴스이다.
+
+        전력 \\( P = \\frac{V^2}{R} \\)로 표현되는데, 컨덕턴스 \\( g = \\frac{1}{R} \\) 관계를 가지고 있다.
+        다시 식을 정리해보면, \\( P = g V^2 \\)이다.
+
+        구하고자 하는 것은, 컨덕턴스이므로, \\( g = \\frac{P_i}{V^2} = \\frac{200}{3000^2} = 22.2 \\times 10^{-6} \\)이다.
+        
+        따라서, 정답은 ②이다.
+        `
+    },
+    q19: { 
+        correct: '1', 
+        explanation: `
+        권수비 공식 \\( a = \\frac{N_1}{N_2} = \\frac{V_1}{V_2} = \\frac{I_2}{I_1} = \\sqrt{\\frac{Z_1}{Z_2}} = \\frac{E_1}{E_2} \\)를 이용한다.
+        
+        \\( a = \\frac{3300}{220} \\) 이다.
+
+        저항 2차를 1차로 변환하면 \\( r_1 = (\\frac{3300}{220})^2 \\times 0.1 = 22.5 \\)
+
+        리액턴스 2차를 1차로 변환하면 \\( x_1 = (\\frac{3300}{220})^2 \\times 0.2 = 45 \\)
+
+        1차측 저항과 리액턴스와 합하게 되면, \\( Z = 52.5 + j105 \\)이다.
+
+        따라서 \\( |Z| = \\sqrt{52.5^2 + 105^2} = 117.39 \\)이다.
+        정답은 ①이다.
+        `
+    },
+    q20: { 
+        correct: '1', 
+        explanation: `
+        \\( I = \\frac{V}{R} = VY \\)식으로 표현될 수 있다.
+
+        따라서, \\( Y = \\frac{I}{V} = \\frac{I_0}{V_1} \\)이다.
+
+        정답은 ①이다.
+        `
     }
 };
 
 let score = 0;
+
+let currentQuestionNumber = 1; // 현재 문제 번호를 저장하는 변수
 
 function checkAnswer(questionNumber) {
     const questionKey = `q${questionNumber}`;
@@ -157,18 +232,9 @@ function checkAnswer(questionNumber) {
     MathJax.typeset(); // 수식을 렌더링합니다.
 }
 
-function showNextQuestion(currentQuestion) {
-    const currentQuestionDiv = document.getElementById(`question${currentQuestion}`);
-    const nextQuestionDiv = document.getElementById(`question${currentQuestion + 1}`);
-
-    if (nextQuestionDiv) {
-        currentQuestionDiv.style.display = 'none';
-        nextQuestionDiv.style.display = 'block';
-    } else {
-        const finalSubmitButton = document.getElementById('final-submit');
-        finalSubmitButton.style.display = 'block';
-    }
-    highlightCurrentQuestion(currentQuestion + 1);
+function showNextQuestion() {
+    const nextQuestionNumber = currentQuestionNumber + 1;
+    showQuestion(nextQuestionNumber);
 }
 
 function finalSubmit() {
@@ -207,7 +273,6 @@ function selectAnswer(questionNumber, answer) {
     }
 }
 
-// Attach event listeners to radio buttons for real-time updates
 document.addEventListener('DOMContentLoaded', () => {
     const quizForm = document.getElementById('quiz-form');
     const radioButtons = quizForm.querySelectorAll('input[type="radio"]');
@@ -228,32 +293,25 @@ function highlightCurrentQuestion(questionNumber) {
     document.getElementById(`answer${questionNumber}`).classList.add('selected');
 }
 
-// Initialize the first question
-document.addEventListener('DOMContentLoaded', () => {
-    showQuestion(1);
-    highlightCurrentQuestion(1);
-});
-
 function showQuestion(questionNumber) {
     for (let i = 1; i <= 82; i++) {  // 총 문제 수를 82으로 설정
         document.getElementById(`question${i}`).style.display = (i === questionNumber) ? 'block' : 'none';
     }
+    currentQuestionNumber = questionNumber; // 현재 문제 번호를 저장
     highlightCurrentQuestion(questionNumber);
 }
 
 function prevQuestion() {
-    const currentQuestion = parseInt(document.querySelector('.question:not([style*="display: none"])').id.replace('question', ''), 10);
-    if (currentQuestion > 1) {
-        showQuestion(currentQuestion - 1);
+    if (currentQuestionNumber > 1) {
+        showQuestion(currentQuestionNumber - 1);
     } else {
         alert('첫번째 문제입니다.');
     }
 }
 
 function nextQuestion() {
-    const currentQuestion = parseInt(document.querySelector('.question:not([style*="display: none"])').id.replace('question', ''), 10);
-    if (currentQuestion < 82) {  // 총 문제 수를 82으로 설정
-        showQuestion(currentQuestion + 1);
+    if (currentQuestionNumber < 82) {  // 총 문제 수를 82로 설정
+        showNextQuestion();
     } else {
         alert('마지막 문제입니다.');
     }
